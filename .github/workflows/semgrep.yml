@@ -17,7 +17,9 @@ jobs:
     - uses: returntocorp/semgrep-action@v1
       with:
           config: >-
-            p/owasp-top-ten
+            p/security-audit 
+            p/secrets
+            r/javascript.aws-lambda.security.knex-sqli.knex-sqli
             
     - name: Result artifacts
       uses: actions/upload-artifact@v2
