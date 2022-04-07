@@ -7,7 +7,7 @@ on:
     - .github/workflows/semgrep.yml
   schedule:
   - cron: '0 0 * * 0'
-name: Semgrep
+name: Semgrep 2
 jobs:
   semgrep:
     name: Scan
@@ -16,4 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: returntocorp/semgrep-action@v1
       with:
-        publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}
+        publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}  
+       
