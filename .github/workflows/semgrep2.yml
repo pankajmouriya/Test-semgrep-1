@@ -16,14 +16,5 @@ jobs:
     - uses: actions/checkout@v2
     - uses: returntocorp/semgrep-action@v1
       with:
-          config: >-
-            p/security-audit 
-            p/secrets
-            r/javascript.aws-lambda.security.knex-sqli.knex-sqli
-            
-    - name: Result artifacts
-      uses: actions/upload-artifact@v2
-      with:
-        name: Result
-        path: |
-          ./semgrep-report   
+        publishToken: ${{ secrets.SEMGREP_APP_TOKEN }}  
+       
