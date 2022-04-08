@@ -2,7 +2,7 @@ name: Weekly vulnerability scan
 on:
   workflow_dispatch:
   schedule: 
-    - cron: '0 0 * * SUN'
+    - cron: '0 0 * * 0'
 
 jobs:
   repo-scan-for-secrets:
