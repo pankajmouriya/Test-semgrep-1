@@ -14,6 +14,12 @@ jobs:
     - name: Installing semgrep using pip
       run: pip3 install semgrep
 
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    
+    - name: Change path to artiface
+      run: mkdir -p semgrep-result
 #     - name: Export repo name to env
 #       run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
 #       shell: bash
@@ -22,17 +28,12 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config p/owasp-top-ten --emacs > ./result.txt0
+        semgrep --config p/owasp-top-ten --json > semgrep-result/world.txt
     
-    - name: Checkout
-      uses: actions/checkout@v2
+
       
-    
-    - name: Change path to artiface
-      run: mkdir -p semgrep-result
-      
-    - name: Change path to artifa
-      run: echo hello > semgrep-result/world.txt
+#     - name: Change path to artifa
+#       run: echo hello > semgrep-result/world.txt
       
     - name: Archive vulnerability scan results
       uses: actions/upload-artifact@v2
