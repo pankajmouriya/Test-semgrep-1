@@ -22,7 +22,7 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config p/python-command-injection --emacs > semver.txt
+        semgrep --config "p/owasp-top-ten"
     - name: Archive vulnerability scan results
       uses: actions/upload-artifact@v2
       with:
