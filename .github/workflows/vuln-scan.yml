@@ -29,14 +29,14 @@ jobs:
         name: ${{ env.REPOSITORY_NAME }}-vulnerability-report
         path: ./semver.txt
       
-    - name: Check result and exit
-      run: |
-        RESULT_LEN=$(cat semver.txt | wc -l)
-        rm semver.txt
-        if [[ $RESULT_LEN == 0 ]]; then
-          exit 0 
-        else
-          echo "Potential vulnerabilities found"
-          echo "Check the audit report and fix"         
-          exit 1
-        fi
+#     - name: Check result and exit
+#       run: |
+#         RESULT_LEN=$(cat semver.txt | wc -l)
+#         rm semver.txt
+#         if [[ $RESULT_LEN == 0 ]]; then
+#           exit 0 
+#         else
+#           echo "Potential vulnerabilities found"
+#           echo "Check the audit report and fix"         
+#           exit 1
+#         fi
