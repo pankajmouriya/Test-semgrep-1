@@ -18,10 +18,10 @@ jobs:
     - name: Installing semgrep using pip
       run: pip3 install semgrep
 
-     - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install awscli
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install awscli
     
     - name: Checkout
       uses: actions/checkout@v2
