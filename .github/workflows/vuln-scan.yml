@@ -1,0 +1,42 @@
+name: Weekly vulnerability scan
+on:
+  workflow_dispatch:
+  schedule: 
+    - cron: '0 0 * * SUN'
+
+jobs:
+  repo-scan-for-secrets:
+    runs-on: 'ubuntu-latest'
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    
+    - name: Installing semgrep using pip
+      run: pip3 install semgrep
+
+    - name: Export repo name to env
+      run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+      shell: bash
+
+      # python-command-injection is only the first ruleset we are making active
+      # more soon to be added
+    - name: Run semver on diff between current and develop branch
+      run: |
+        semgrep --config p/python-command-injection --emacs > semver.txt
+    - name: Archive vulnerability scan results
+      uses: actions/upload-artifact@v2
+      with:
+        name: ${{ env.REPOSITORY_NAME }}-vulnerability-report
+        path: ./semver.txt
+      
+    - name: Check result and exit
+      run: |
+        RESULT_LEN=$(cat semver.txt | wc -l)
+        rm semver.txt
+        if [[ $RESULT_LEN == 0 ]]; then
+          exit 0 
+        else
+          echo "Potential vulnerabilities found"
+          echo "Check the audit report and fix"         
+          exit 1
+        fi
