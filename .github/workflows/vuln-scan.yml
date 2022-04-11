@@ -14,9 +14,9 @@ jobs:
     - name: Installing semgrep using pip
       run: pip3 install semgrep
 
-    - name: Export repo name to env
-      run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
-      shell: bash
+#     - name: Export repo name to env
+#       run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
+#       shell: bash
 
       # python-command-injection is only the first ruleset we are making active
       # more soon to be added
@@ -26,8 +26,8 @@ jobs:
     - name: Archive vulnerability scan results
       uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.REPOSITORY_NAME }}-vulnerability-report
-        path: ./semver.txt
+        name: vulnerability-report
+        path: test/semver.txt
       
 #     - name: Check result and exit
 #       run: |
