@@ -37,7 +37,7 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config p/owasp-top-ten --gitlab-sast > semgrep-result/world.txt
+        semgrep --config p/owasp-top-ten --junit-xml > semgrep-result/world.txt
     
 
       
