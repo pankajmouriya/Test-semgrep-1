@@ -32,7 +32,6 @@ jobs:
         
         
     - name: Configure AWS Credentials
-    - uses: actions/checkout@master
     - uses: jakejarvis/s3-sync-action@master
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
