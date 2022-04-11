@@ -22,13 +22,24 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config p/owasp-top-ten --emacs > ./result.txt
+        semgrep --config p/owasp-top-ten --emacs > ./result.txt0
+    
+    - name: Checkout
+      uses: actions/checkout@v2
+      
+    
+    - name: Change path to artiface
+      run: mkdir -p semgrep-result
+      
+    - name: Change path to artifa
+      run: echo hello > semgrep-result/world.txt
+      
     - name: Archive vulnerability scan results
       uses: actions/upload-artifact@v2
       with:
         name: Semgrep report
         path: |
-          ./result.txt
+          semgrep-result/world.txt
       
 #     - name: Check result and exit
 #       run: |
