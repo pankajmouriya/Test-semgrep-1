@@ -29,12 +29,19 @@ jobs:
       with:
         name: ${{ env.REPOSITORY_NAME }}-vulnerability-report
         path: ./semver.txt
-    
-    - name: Upload SARIF file for GitHub Advanced Security Dashboard
-      uses: github/codeql-action/upload-sarif@v1
+        
+        
+    - name: Configure AWS Credentials
+    - uses: actions/checkout@master
+    - uses: jakejarvis/s3-sync-action@master
       with:
-        sarif_file: semgrep.sarif
-      if: always()
+        args: --acl public-read --follow-symlinks --delete
+      env:
+        AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_REGION: 'us-west-1'   # optional: defaults to us-east-1
+        SOURCE_DIR: 'public'      # optional: defaults to entire repository
 #     - name: Check result and exit
 #       run: |
 #         RESULT_LEN=$(cat semver.txt | wc -l)
