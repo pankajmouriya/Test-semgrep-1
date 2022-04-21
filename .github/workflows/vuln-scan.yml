@@ -26,7 +26,7 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config p/owasp-top-ten --json > world.txt
+        semgrep --config p/owasp-top-ten --json > world.json
     
 #     - name: Change path to artifa
 #       run: echo hello > semgrep-result/world.txt
@@ -35,12 +35,21 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Semgrep report
-        path: world.txt
+        path: world.json
     
     - name: Upload Report to S3
       run: |
         aws s3 cp world.txt s3://test-semgrep-zapier-int/results/`date +'%d-%b-%YT%H-%M-%S'`.json
-
+        
+    - uses: actions/checkout@v2
+    - name: Deploy
+      uses: exuanbo/actions-deploy-gist@v1
+      with:
+        token: ${{ secrets.TOKEN }}
+        gist_id: 4d63476be6e0bdbee93bbd9510889a0e
+        gist_description: "foo bar"
+        gist_file_name: foo.bar
+        file_path: world.json
       
 #     - name: Check result and exit
 #       run: |
