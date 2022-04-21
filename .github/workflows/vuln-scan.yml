@@ -22,25 +22,12 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install awscli
-    
-    - name: Checkout
-      uses: actions/checkout@v2
-      
-    
-    - name: Change path to artiface
-      run: mkdir -p semgrep-result
-#     - name: Export repo name to env
-#       run: echo "REPOSITORY_NAME=$(echo '${{ github.repository }}' | awk -F '/' '{print $2}')" >> $GITHUB_ENV
-#       shell: bash
-
       # python-command-injection is only the first ruleset we are making active
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
         semgrep --config p/owasp-top-ten --junit-xml > world.txt
     
-
-      
 #     - name: Change path to artifa
 #       run: echo hello > semgrep-result/world.txt
       
