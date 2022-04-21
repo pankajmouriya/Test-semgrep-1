@@ -37,7 +37,7 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config p/owasp-top-ten --junit-xml > semgrep-result/world.txt
+        semgrep --config p/owasp-top-ten --junit-xml > world.txt
     
 
       
@@ -48,12 +48,11 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Semgrep report
-        path: |
-          semgrep-result/world.txt
+        path: world.txt
     
     - name: Upload Report to S3
       run: |
-        aws s3 cp semgrep-result/world.txt s3://test-bucket1997forsemgrep/results/`date +'%d-%b-%YT%H-%M-%S'`.json
+        aws s3 cp world.txt s3://test-bucket1997forsemgrep/results/`date +'%d-%b-%YT%H-%M-%S'`.json
 
       
 #     - name: Check result and exit
