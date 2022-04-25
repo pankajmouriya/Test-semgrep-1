@@ -8,7 +8,7 @@
 
 <html>
     <body>
-       <div class="progress-bar progress-bar-success" style="width: 3.947368421052631%">3 other
+      <div class="progress-bar progress-bar-success" style="width: 3.947368421052631%">3 other
             </div><div class="progress-bar progress-bar-info" style="width: 9.210526315789473%">7 low
             </div><div class="progress-bar progress-bar-warning" style="width: 85.5263157894737%">65 medium
             </div><div class="progress-bar progress-bar-danger" style="width: 1.31578947368421%">1 high
