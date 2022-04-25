@@ -13,7 +13,6 @@
         <ul>
             <li>text</li>
         </ul>
-        
     </div>
 </foreignObject>
 </svg>
