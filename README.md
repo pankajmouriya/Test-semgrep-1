@@ -6,6 +6,16 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/owasp_juiceshop.svg?style=social&label=Follow)](https://twitter.com/owasp_juiceshop)
 [![Subreddit subscribers](https://img.shields.io/reddit/subreddit-subscribers/owasp_juiceshop?style=social)](https://reddit.com/r/owasp_juiceshop)
 
+<html>
+    <body>
+        <div class="progress" title="Displays proportion of high, medium, low, and other severity failed rules (in that order). There were 76 total failed rules."><div class="progress-bar progress-bar-success" style="width: 3.947368421052631%">3 other
+            </div><div class="progress-bar progress-bar-info" style="width: 9.210526315789473%">7 low
+            </div><div class="progress-bar progress-bar-warning" style="width: 85.5263157894737%">65 medium
+            </div><div class="progress-bar progress-bar-danger" style="width: 1.31578947368421%">1 high
+            </div></div>
+    </body>
+ </html>   
+
 ![html-test](./example.svg)
 ![CI/CD Pipeline](https://github.com/juice-shop/juice-shop/workflows/CI/CD%20Pipeline/badge.svg?branch=master)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6206c8f3972bcc97a033/test_coverage)](https://codeclimate.com/github/juice-shop/juice-shop/test_coverage)
