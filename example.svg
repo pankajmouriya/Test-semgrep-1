@@ -4,7 +4,18 @@
         <ul>
             <li>text</li>
         </ul>
-        <!-- Other embed HTML element/text into SVG -->
+        <div id="compliance-and-scoring"><h2>Compliance and Scoring</h2><div class="alert alert-danger"><strong>The target system did not satisfy the conditions of 76 rules!</strong>
+                        Furthermore, the results of 7 rules were inconclusive.
+                    
+                    Please review rule results and consider applying remediation.
+                </div><h3>Rule results</h3><div class="progress" title="Displays proportion of passed/fixed, failed/error, and other rules (in that order). There were 186 rules taken into account."><div class="progress-bar progress-bar-success" style="width: 53.763440860215%">100 passed
+            </div><div class="progress-bar progress-bar-danger" style="width: 40.8602150537634%">76 failed
+            </div><div class="progress-bar progress-bar-warning" style="width: 5.376344086021501%">10 other
+            </div></div><h3>Severity of failed rules</h3><div class="progress" title="Displays proportion of high, medium, low, and other severity failed rules (in that order). There were 76 total failed rules."><div class="progress-bar progress-bar-success" style="width: 3.947368421052631%">3 other
+            </div><div class="progress-bar progress-bar-info" style="width: 9.210526315789473%">7 low
+            </div><div class="progress-bar progress-bar-warning" style="width: 85.5263157894737%">65 medium
+            </div><div class="progress-bar progress-bar-danger" style="width: 1.31578947368421%">1 high
+            </div></div><h3 title="As per the XCCDF specification">Score</h3><table class="table table-striped table-bordered"><thead><tr><th>Scoring system</th><th class="text-center">Score</th><th class="text-center">Maximum</th><th class="text-center" style="width: 40%">Percent</th></tr></thead><tbody><tr><td>urn:xccdf:scoring:default</td><td class="text-center">64.768562</td><td class="text-center">100.000000</td><td><div class="progress"><div class="progress-bar progress-bar-success" style="width: 64.768562%">64.77%</div><div class="progress-bar progress-bar-danger" style="width: 35.231438%"></div></div></td></tr></tbody></table></div>
     </div>
 </foreignObject>
 </svg>
