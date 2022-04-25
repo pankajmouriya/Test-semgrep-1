@@ -1,5 +1,13 @@
 <svg width="1020" height="768" xmlns="http://www.w3.org/2000/svg">
-<foreignObject width="100" height="100">
+    <style>
+    div {
+      color: white;
+      font: 18px serif;
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+<foreignObject width="1020" height="768">
     <div xmlns="http://www.w3.org/1999/xhtml">
         <ul>
             <li>text</li>
