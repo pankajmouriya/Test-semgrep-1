@@ -37,10 +37,6 @@ jobs:
         name: Semgrep report
         path: world2.json
     
-    - name: Upload Report to S3
-      run: |
-        aws s3 cp world2.json s3://test-semgrep-zapier-int/results/`date +'%d-%b-%YT%H-%M-%S'`.txt
-    
     - uses: actions/checkout@v2
     - uses: actions/setup-python@v2
     - uses: jannekem/run-python-script-action@v1
@@ -49,6 +45,10 @@ jobs:
             import pandas as pd
             df_json = pd.read_json(‘world2.json’)
             df_json.to_excel(‘DATAFILE.xlsx’)
+            
+    - name: Upload Report to S3
+      run: |
+        aws s3 cp DATAFILE.xlsx s3://test-semgrep-zapier-int/results/`date +'%d-%b-%YT%H-%M-%S'`.xlsx
     
     - uses: actions/checkout@v2
     - name: Deploy
