@@ -26,7 +26,7 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config p/owasp-top-ten --json > world.json
+        semgrep --config p/owasp-top-ten --sarif > world.txt
     
 #     - name: Change path to artifa
 #       run: echo hello > semgrep-result/world.txt
