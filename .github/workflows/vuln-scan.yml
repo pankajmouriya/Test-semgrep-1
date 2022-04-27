@@ -22,6 +22,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install awscli
+        pip install pandas openpyxl
       # python-command-injection is only the first ruleset we are making active
       # more soon to be added
     - name: Run semver on diff between current and develop branch
@@ -43,8 +44,9 @@ jobs:
       with:
         script: |
             import pandas as pd
-            df_json = pd.read_json(‘world2.json’)
-            df_json.to_excel(‘DATAFILE.xlsx’)
+            import json
+            df_json = pd.read_json('world2.json')
+            df_json.to_excel('DATAFILE.xlsx')
             
     - name: Upload Report to S3
       run: |
