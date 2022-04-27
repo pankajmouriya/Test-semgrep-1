@@ -35,7 +35,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Semgrep report
-        path: world.json
+        path: world.txt
     
     - name: Upload Report to S3
       run: |
