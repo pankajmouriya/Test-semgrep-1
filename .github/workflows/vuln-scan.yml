@@ -22,7 +22,8 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install awscli
-        pip install pandas openpyxl
+        pip install manager
+        pip install pandas
       # python-command-injection is only the first ruleset we are making active
       # more soon to be added
     - name: Run semver on diff between current and develop branch
