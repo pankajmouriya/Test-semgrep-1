@@ -1,5 +1,11 @@
 # ![Juice Shop Logo](https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png) OWASP Juice Shop
 ![Security Assessment Badge](https://img.shields.io/badge/Security%20Assessment-Medium-yellow?&logoColor=white)
+
+
+
+![Semgrep example workflow](https://github.com/pankajmouriya/Test-semgrep-1/actions/workflows/vuln-scan.yml/badge.svg)
+
+
 ![Generic Badge](https://img.shields.io/badge/Pentest-Pentest-yellowgreen)
 [![OWASP Flagship](https://img.shields.io/badge/owasp-flagship%20project-48A646.svg)](https://owasp.org/projects/#sec-flagships)
 [![GitHub release](https://img.shields.io/github/release/juice-shop/juice-shop.svg)](https://github.com/juice-shop/juice-shop/releases/latest)
