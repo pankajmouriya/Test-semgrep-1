@@ -18,11 +18,6 @@ jobs:
     - name: Installing semgrep using pip
       run: pip3 install semgrep
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install awscli
-
       # python-command-injection is only the first ruleset we are making active
       # more soon to be added
     - name: Run semver on diff between current and develop branch
@@ -37,33 +32,7 @@ jobs:
       with:
         name: Semgrep report
         path: world2.json
-    
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v2
-    - name: Install dependencies
-      run: |
-        pip install pandas
-    - uses: jannekem/run-python-script-action@v1
-      with:
-        script: |
-            import pandas as pd
-            import json
-            df_json = pd.read_json('world2.json')
-            df_json.to_excel('DATAFILE.xlsx')
-            
-    - name: Upload Report to S3
-      run: |
-        aws s3 cp DATAFILE.xlsx s3://test-semgrep-zapier-int/results/`date +'%d-%b-%YT%H-%M-%S'`.xlsx
-    
-    - uses: actions/checkout@v2
-    - name: Deploy
-      uses: exuanbo/actions-deploy-gist@v1
-      with:
-        token: ${{ secrets.TOKEN }}
-        gist_id: 4d63476be6e0bdbee93bbd9510889a0e
-        gist_description: "foo bar"
-        gist_file_name: foo.bar
-        file_path: world1.json
+  
       
 #     - name: Check result and exit
 #       run: |
