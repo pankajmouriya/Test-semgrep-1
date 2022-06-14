@@ -22,7 +22,7 @@ jobs:
       # more soon to be added
     - name: Run semver on diff between current and develop branch
       run: |
-        semgrep --config="r/javascript.audit.detect-replaceall-sanitization.detect-replaceall-sanitization" --json > world2.json
+        semgrep --config "p/python" --json > world2.json
     
 #     - name: Change path to artifa
 #       run: echo hello > semgrep-result/world.txt
