@@ -23,7 +23,6 @@ jobs:
     - name: Run semver on diff between current and develop branch
       run: |
         semgrep --config p/owasp-top-ten --json > world2.json
-        jq --color-output . world2.json > world2.json
     
 #     - name: Change path to artifa
 #       run: echo hello > semgrep-result/world.txt
