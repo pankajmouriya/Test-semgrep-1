@@ -1,7 +1,7 @@
 # ![Juice Shop Logo](https://raw.githubusercontent.com/juice-shop/juice-shop/master/frontend/src/assets/public/images/JuiceShop_Logo_100px.png) OWASP Juice Shop
 ![Security Assessment Badge](https://img.shields.io/badge/Security%20Assessment-Medium-yellow?&logoColor=white)
 
-
+![Weekly secret sca111](https://github.com/invideoio/invideo-webAutomationFramework/actions/workflows/weekly-secret-scan.yml)
 
 ![Semgrep example workflow](https://github.com/pankajmouriya/Test-semgrep-1/actions/workflows/vuln-scan.yml/badge.svg)
 
